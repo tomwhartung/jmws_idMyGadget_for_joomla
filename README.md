@@ -8,34 +8,24 @@ Copied this code from https://github.com/tomwhartung/idMyGadget and made a few c
 See the parent project, [idMyGadget](https://github.com/tomwhartung/idMyGadget) for background information.
 
 ### Device Detection in Action
-To see idMyGadget in operation, see
-[my resume](https://github.com/tomwhartung/resume) ,
-which is online here: http://tomwhartung.com/resume ,
-For the full effect, be sure to visit 
-http://tomwhartung.com/resume
-on both your phone and a desktop or tablet!
+To see idMyGadget in operation, see [my resume](https://github.com/tomwhartung/resume) , which is online here: http://tomwhartung.com/resume ,
+For the full effect, be sure to visit http://tomwhartung.com/resume on both your phone and a desktop or tablet!
 
 ## Plan
 
 My plans are fuzzy now, so documentation would be premature.
 
 ### idMyGadget
-Regarding idMyGadget, the plan is to not make any changes to the parent project,
-so we can do whatever we want for joomla here,
-with out having to worry about messing up projects depended on idMyGadget,
-such as my [resume](https://github.com/tomwhartung/resume) .
+Regarding idMyGadget, the plan is to not make any changes to the parent project, so we can do whatever we want for joomla here, with out having to worry about messing up projects depended on idMyGadget, such as my [resume](https://github.com/tomwhartung/resume) .
 
 ### jmws_idmygadget_for_joomla
-The idea for this project is: to integrate the device detection offered by [idMyGadget](https://github.com/tomwhartung/idMyGadget)
-into the default joomla templates Beez3 and protostar, which I have copied into these repos:
+The idea for this project is: to integrate the device detection offered by [idMyGadget](https://github.com/tomwhartung/idMyGadget) into the default joomla templates Beez3 and protostar, which I have copied into these repos:
 
 * https://github.com/tomwhartung/jmws_beez3_idmygadget and
 * https://github.com/tomwhartung/jmws_protostar_idMyGadget
 
-There's a strong possibility I will add in jQuery Mobile for phones,
-as I did for my
-[resume](https://github.com/tomwhartung/resume) ,
-because it is kind of cool.
+There's a strong possibility I will add in jQuery Mobile for phones, as I did for my [resume](https://github.com/tomwhartung/resume) , because it is kind of cool.
+But I need to try it first, and see if it makes sense....
 
 ## Conclusion
 
