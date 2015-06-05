@@ -66,10 +66,6 @@ else
 	<dt><a href="idMyGadgetDemo.php" <?php print $demoDisabledClass; ?> >idMyGadgetDemo.php</a></dt>
 	<dd>Demonstrates <?php print $detectorName; ?>
 		device detection, using the IdMyGadget Adapter API.</dd>
-	<dt><a href="deviceDeterminesContentDemo.php" <?php print $demoDisabledClass; ?> >
-		deviceDeterminesContentDemo.php</a></dt>
-	<dd>Demonstrates using <?php print $detectorName; ?>
-		device detection to deliver device-specific content.</dd>
  </dl>
  <hr />
  <p class="centered">|&nbsp;<a href="../gadget_detectors.php">Back</a>&nbsp;|</p>

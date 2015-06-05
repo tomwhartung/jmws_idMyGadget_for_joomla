@@ -84,10 +84,6 @@ print "<h1>$detectorName</h1>";
 			idMyGadgetDemo.php</a></dt>
 		<dd>Demonstrates <?php print $detectorName; ?>
 			device detection, using the IdMyGadget Adapter API.</dd>
-		<dt><a href="deviceDeterminesContentDemo.php" <?php print $demoDisabledClass; ?> >
-			deviceDeterminesContentDemo.php</a></dt>
-		<dd>Demonstrates using <?php print $detectorName; ?>
-			device detection to deliver device-specific content.</dd>
 	</dl>
 	<h3>More Demos:</h3>
 	<dl>
