@@ -72,7 +72,7 @@ else
 		device detection to deliver device-specific content.</dd>
  </dl>
  <hr />
- <p class="centered">|&nbsp;<a href="..">Back</a>&nbsp;|</p>
+ <p class="centered">|&nbsp;<a href="../gadget_detectors.php">Back</a>&nbsp;|</p>
  <hr />
 </div> <!-- content -->
 </div> <!-- container -->

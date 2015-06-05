@@ -45,7 +45,6 @@ $pageTitle = 'jmws_idMyGadget_for_joomla';
 			look promising, but I was unable to quickly get them to work, and so far the others are good enough.</dd>
 	</dl>
 	<hr />
-	<p class="centered">|&nbsp;<a href="..">Back</a>&nbsp;|</p>
 	<hr />
 </div> <!-- content -->
 </div> <!-- container -->

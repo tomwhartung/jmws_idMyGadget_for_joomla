@@ -123,7 +123,7 @@ print "<h1>$detectorName</h1>";
 		<dt><a href=""></a></dt><dd></dd>
 	</dl>
 	<hr />
-	<p class="centered">|&nbsp;<a href="..">Back</a>&nbsp;|</dt>
+	<p class="centered">|&nbsp;<a href="../gadget_detectors.php">Back</a>&nbsp;|</dt>
 	<hr />
 </div> <!-- content -->
 </div> <!-- container -->
