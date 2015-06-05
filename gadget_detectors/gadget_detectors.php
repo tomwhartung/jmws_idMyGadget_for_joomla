@@ -20,12 +20,12 @@ $pageTitle = 'jmws_idMyGadget_for_joomla';
 	print "<h1>$pageTitle</h1>";
 ?>
 <div id="content">
-	<p>The IdMyGadget Adapter API offers a common API to the device detectors listed on this page.
-		Learn more about idMyGadget by installing and playing around with it; the git repo is here:
+	<p>The IdMyGadget Adapter API offers a common API to the device detectors listed on this page.</p>
+	<p>Learn more about idMyGadget by installing and playing around with it; the git repo is here:
 		<a href="https://github.com/tomwhartung/idMyGadget" target="_blank">https://github.com/tomwhartung/idMyGadget</a> .</p>
+	<h4>Gadget Detectors:</h4>
 	<p>Each of the following gadget detector links takes you to a page containing links that demonstrate how to use the
 	 selected detector, with and without the IdMyGadget Adapter API.</p>
-	<h4>Gadget Detectors:</h4>
 	<dl>
 		<dt><a href="detect_mobile_browsers">detect_mobile_browsers</a></dt>
 		<dd>A script available from the site <a href="http://detectmobilebrowsers.com" target="_blank">detectmobilebrowsers.com</a>
