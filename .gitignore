@@ -1,0 +1,14 @@
+#
+# Documentation is here: http://git-scm.com/docs/gitignore
+#
+tmp/
+*.swp
+/nbproject/
+
+#
+# Ignore third-party code
+#
+/gadget_detectors/detect_mobile_browsers/php/detectmobilebrowser.php.txt
+/gadget_detectors/mobile_detect/Mobile-Detect/
+/gadget_detectors/tera_wurfl/Tera-Wurfl/wurfl-dbapi*
+
