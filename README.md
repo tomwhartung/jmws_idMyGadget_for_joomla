@@ -28,7 +28,7 @@ There's a strong possibility I will add in jQuery Mobile for phones, as I did fo
 But I need to try it first, and see if it makes sense....
 
 ## Installation
-If you still want to download and use this code somehow, you will want to access the file 
+If you still want to download and use this code somehow, you will want to run the command 
 
 ```
 git clone git@github.com:tomwhartung/jmws_idMyGadget_for_joomla.git
@@ -37,6 +37,8 @@ git clone git@github.com:tomwhartung/jmws_idMyGadget_for_joomla.git
 ## Running the Device Detectors
 To run the Gadget Detectors, load this file into your browser:
 * gadget_detectors/gadget_detectors.php
+
+The parent idMyProject contains more demo code so there's really no reason to do this, but you can, if you want.
 
 ## Next Steps:
 
