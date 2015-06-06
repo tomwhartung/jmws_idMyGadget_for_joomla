@@ -1,6 +1,6 @@
 
 # jmws_idmygadget_for_joomla
-A single version of the idMyGadget adapter API that I want to integrate with the default joomla templates Beez3 and protostar.
+This is the single version of the idMyGadget adapter API that I customizing for integration with the default joomla templates Beez3 and protostar.
 
 ## History
 Copied this code from https://github.com/tomwhartung/idMyGadget and made a few changes (mostly just deleted the unneeded demo stuff) for use with joomla.
@@ -26,6 +26,21 @@ The idea for this project is: to integrate the device detection offered by [idMy
 
 There's a strong possibility I will add in jQuery Mobile for phones, as I did for my [resume](https://github.com/tomwhartung/resume) , because it is kind of cool.
 But I need to try it first, and see if it makes sense....
+
+## Installation
+If you still want to download and use this code somehow, you will want to access the file 
+
+```
+git clone git@github.com:tomwhartung/jmws_idMyGadget_for_joomla.git
+```
+
+## Running the Device Detectors
+To run the Gadget Detectors, load this file into your browser:
+* gadget_detectors/gadget_detectors.php
+
+## Next Steps:
+
+Before you can use idMyGadget to identify devices, you must install, and if necessary initialize, one of the supported device detectors.
 
 ## Conclusion
 
