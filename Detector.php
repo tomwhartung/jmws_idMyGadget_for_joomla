@@ -2,7 +2,6 @@
 /**
  * Creates an object of the desired idMyGadget subclass and uses it for device detection.
  */
-
 class Detector
 {
 	const DETECT_MOBILE_BROWSERS = 'detect_mobile_browsers';
@@ -11,19 +10,19 @@ class Detector
 	/**
 	 * The gadget detector that we are using
 	 */
-	public $gadgetDetector = self::DETECT_MOBILE_BROWSERS;  // default is to use the small, minimal one
+	protected $gadgetDetector = self::DETECT_MOBILE_BROWSERS;  // default is to use the small, minimal one
 	/**
 	 * The idMyGadget object we are using
 	 */
-	public $idMyGadget = null;
+	protected $idMyGadget = null;
 	/**
 	 * The device data we get from the detector
 	 */
-	public $deviceData = null;
+	protected $deviceData = null;
 	/**
 	 * A string that represents the gadget being used
 	 */
-	public $gadgetString = "";
+	protected $gadgetString = "";
 
 	/**
 	 * Constructor: for best results, specify a different gadgetDetector
@@ -66,4 +65,34 @@ class Detector
 			$this->gadgetString = getGadgetString( $this->deviceData );
 		}
 	}
-}
+
+	/**
+	 * The idMyGadget object is read-only!
+	 */
+	public function getGadgetDetector()
+	{
+		return $this->gadgetDetector;
+	}
+	/**
+	 * The idMyGadget object is read-only!
+	 */
+	public function getIdMyGadget()
+	{
+		return $this->idMyGadget;
+	}
+	/**
+	 * The device data is read-only!
+	 */
+	public function getDeviceData()
+	{
+		return $this->deviceData;
+	}
+	/**
+	 * The gadget string is read-only!
+	 */
+	public function getGadgetString()
+	{
+		return $this->gadgetString;
+	}
+
+		}
