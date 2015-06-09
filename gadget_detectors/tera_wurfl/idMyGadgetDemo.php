@@ -13,7 +13,6 @@ require_once 'Tera-Wurfl/wurfl-dbapi/TeraWurfl.php';
 require_once '../../php/IdMyGadgetTeraWurfl.php';
 require_once '../all_detectors/getGadgetString.php';
 require_once '../all_detectors/printStyleSheetLinkTags.php';
-require_once '../all_detectors/printFooterForms.php';
 require_once 'DemoTeraWurfl.php';
 
 //
@@ -113,20 +112,22 @@ if ( strlen($output) > 0 )
 }
 ?>
 
-	<hr />
 	<p class="centered">
 		<?php
 			if ( $longOutput === TRUE )
 			{
+				print '<hr />';
 				print '|&nbsp;<a href="#container">Top</a>&nbsp;';
 			}
 		?>
-		|&nbsp;<a href="index.php">Back</a>&nbsp;|</p>
-	<hr />
 
 </div> <!-- #content -->
 <footer>
-	<?php printFooterForms( $styleSheetFile, $deviceData ); ?>
+	<hr />
+	<div class="footerLink">
+		<p class="centered">|&nbsp;<a href="index.php">Back</a>&nbsp;|</p>
+	</div> <!-- .footerLink -->
+	<hr />
 </footer>
 </div> <!-- #container -->
 </body>

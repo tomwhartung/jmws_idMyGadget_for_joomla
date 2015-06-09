@@ -7,7 +7,6 @@ require_once( 'Mobile-Detect/Mobile_Detect.php' );
 require_once( '../../php/IdMyGadgetMobileDetect.php' );
 require_once '../all_detectors/getGadgetString.php';
 require_once '../all_detectors/printStyleSheetLinkTags.php';
-require_once '../all_detectors/printFooterForms.php';
 
 $debugging = FALSE;
 $allowOverridesInUrl = TRUE;   // Needed for footer forms to work
@@ -38,12 +37,13 @@ $gadgetString = getGadgetString( $deviceData );
 		print "<ul class='no-bullets'>" . $idMyGadget->displayDeviceData() . "</ul>";
 		print "</div> <!-- .output -->";
 	?>
- <hr />
- <p class="centered">|&nbsp;<a href="index.php">Back</a>&nbsp;|</p>
- <hr />
 </div> <!-- #content -->
 <footer>
-	<?php printFooterForms( $styleSheetFile, $deviceData ); ?>
+	<hr />
+	<div class="footerLink">
+		<p class="centered">|&nbsp;<a href="index.php">Back</a>&nbsp;|</p>
+	</div> <!-- .footerLink -->
+	<hr />
 </footer>
 </div> <!-- #container -->
 </body>
