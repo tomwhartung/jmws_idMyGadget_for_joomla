@@ -23,6 +23,20 @@ class IdMyGadgetMobileDetect extends IdMyGadget
 	}
 
 	/**
+	 * Test whether this detector's code is installed
+	 * @return boolean TRUE if the code is installed else FALSE
+	 */
+	public function isInstalled()
+	{
+		$detectorInstalled = FALSE;
+		if ( file_exists('php/detectmobilebrowser.php') )
+		{
+			$detectorInstalled = TRUE;
+		}
+		return $detectorInstalled;
+	}
+
+	/**
 	 * Get all of the data we can about the device
 	 * @return associative array of device data
 	 */

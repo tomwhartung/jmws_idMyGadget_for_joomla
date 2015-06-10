@@ -100,8 +100,9 @@ abstract class IdMyGadget
 	}
 
 	/**
-	 * TODO: Add isInstalled() method
+	 * Returns TRUE if the desired detector (subclass) is installed, else FALSE
 	 */
+	abstract public function isInstalled();
 	/**
 	 * For each device detection mechanisim, we must implement this function
 	 * to get the data that is available about the device.
