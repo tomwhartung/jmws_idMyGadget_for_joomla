@@ -153,10 +153,10 @@ class IdMyGadgetTeraWurfl extends IdMyGadget
 	 * Note that it does not necessarily equal one of the constants defined in deviceData.php
 	 * @return gadgetBrand
 	 */
-// $this->setGadgetBrand( $this->keyCapabilities['brand_name'] );
-	protected function setGadgetBrand( $brand_name )
+	protected function setGadgetBrand()
 	{
 		parent::setGadgetBrand();
+		$brand_name = $this->keyCapabilities['brand_name'];
 
 		if ( $this->gadgetBrand === parent::GADGET_BRAND_UNKNOWN )
 		{
@@ -208,10 +208,10 @@ class IdMyGadgetTeraWurfl extends IdMyGadget
 	 * Note that it does not necessarily equal one of the constants defined in deviceData.php
 	 * @return gadgetModel
 	 */
-// $this->setGadgetModel( $this->keyCapabilities['model_name'] );
-	protected function setGadgetModel( $model_name )
+	protected function setGadgetModel()
 	{
 		parent::setGadgetModel();
+		$model_name = $this->keyCapabilities['model_name'];
 
 		// $this->gadgetModel = $model_name;
 		// return;
