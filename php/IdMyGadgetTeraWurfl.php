@@ -118,9 +118,11 @@ class IdMyGadgetTeraWurfl extends IdMyGadget
 	 * Set the gadget type to one of the GADGET_TYPE_* constants: desktop, phone, etc.
 	 * @return gadgetType
 	 */
-	protected function setGadgetType( $pointing_method, $is_tablet )
+	protected function setGadgetType()
 	{
 		parent::setGadgetType();
+		$pointing_method = $this->keyCapabilities['pointing_method'];
+		$is_tablet = $this->keyCapabilities['is_tablet'];
 
 		if ( $this->gadgetType === parent::GADGET_TYPE_UNKNOWN )
 		{
@@ -151,6 +153,7 @@ class IdMyGadgetTeraWurfl extends IdMyGadget
 	 * Note that it does not necessarily equal one of the constants defined in deviceData.php
 	 * @return gadgetBrand
 	 */
+// $this->setGadgetBrand( $this->keyCapabilities['brand_name'] );
 	protected function setGadgetBrand( $brand_name )
 	{
 		parent::setGadgetBrand();
@@ -205,6 +208,7 @@ class IdMyGadgetTeraWurfl extends IdMyGadget
 	 * Note that it does not necessarily equal one of the constants defined in deviceData.php
 	 * @return gadgetModel
 	 */
+// $this->setGadgetModel( $this->keyCapabilities['model_name'] );
 	protected function setGadgetModel( $model_name )
 	{
 		parent::setGadgetModel();
