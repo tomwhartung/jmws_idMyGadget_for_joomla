@@ -100,6 +100,9 @@ abstract class IdMyGadget
 	}
 
 	/**
+	 * TODO: Add isInstalled() method
+	 */
+	/**
 	 * For each device detection mechanisim, we must implement this function
 	 * to get the data that is available about the device.
 	 * This may be a single value, as is the case with the Detect Mobile Browser option, or
