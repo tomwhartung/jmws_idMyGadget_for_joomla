@@ -13,6 +13,12 @@ class IdMyGadgetTeraWurfl extends IdMyGadget
 	public $teraWurflObject = null;
 
 	/**
+	 * Link to README.md file on github for this detector
+	 * @var type URL
+	 */
+	protected $linkToReadme =
+		'https://github.com/tomwhartung/idMyGadget/blob/master/gadget_detectors/tera_wurfl/README.md';
+	/**
 	 * Whether the key capabilities have been set
 	 * @var boolean
 	 */

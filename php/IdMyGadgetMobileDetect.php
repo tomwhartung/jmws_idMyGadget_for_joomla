@@ -11,6 +11,12 @@ class IdMyGadgetMobileDetect extends IdMyGadget
 	 * @var 
 	 */
 	public $mobileDetectObject = null;
+	/**
+	 * Link to README.md file on github for this detector
+	 * @var type URL
+	 */
+	protected $linkToReadme =
+		'https://github.com/tomwhartung/idMyGadget/blob/master/gadget_detectors/mobile_detect/README.md';
 
 	/**
 	 * Constructor: initialize essential data members

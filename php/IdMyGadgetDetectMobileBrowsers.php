@@ -12,6 +12,12 @@ class IdMyGadgetDetectMobileBrowsers extends IdMyGadget
 	protected $usingMobilePhone = null;
 
 	/**
+	 * Link to README.md file on github for this detector
+	 * @var type URL
+	 */
+	protected $linkToReadme =
+		'https://github.com/tomwhartung/idMyGadget/blob/master/gadget_detectors/detect_mobile_browsers/README.md';
+	/**
 	 * Constructor: initialize essential data members
 	 */
 	public function __construct( $debugging=FALSE, $allowOverridesInUrl=FALSE, $usingMobilePhone=null )
@@ -28,7 +34,7 @@ class IdMyGadgetDetectMobileBrowsers extends IdMyGadget
 	public function isInstalled()
 	{
 		$detectorInstalled = FALSE;
-		if ( file_exists('php/detectmobilebrowser.php') )
+		if ( file_exists('../gadget_detectors/detect_mobile_browsers/php/detectmobilebrowser.php') )
 		{
 			$detectorInstalled = TRUE;
 		}

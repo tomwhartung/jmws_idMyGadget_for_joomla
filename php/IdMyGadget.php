@@ -89,6 +89,12 @@ abstract class IdMyGadget
 	 * @var string
 	 */
 	protected $gadgetModel = self::GADGET_MODEL_UNKNOWN;
+	/**
+	 * Link to README.md file on github for this detector
+	 * @var type URL
+	 */
+	protected $linkToReadme =
+		'https://github.com/tomwhartung/idMyGadget/blob/master/gadget_detectors/README.md';
 
 	/**
 	 * Constructor: initialize essential data members
@@ -111,6 +117,14 @@ abstract class IdMyGadget
 	 */
 	abstract public function getDeviceData();
 
+	/**
+	 * Returns a link to the README.md file on github,
+	 * that contains instructions on how toinstall the detector
+	 */
+	public function getLinkToReadme()
+	{
+		return $this->linkToReadme;
+	}
 	/**
 	 * Display the device data
 	 * @return string of <li> tags listing the device data
