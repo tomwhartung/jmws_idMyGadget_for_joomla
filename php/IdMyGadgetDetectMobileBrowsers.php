@@ -34,7 +34,17 @@ class IdMyGadgetDetectMobileBrowsers extends IdMyGadget
 	public function isInstalled()
 	{
 		$detectorInstalled = FALSE;
-		if ( file_exists('../gadget_detectors/detect_mobile_browsers/php/detectmobilebrowser.php') )
+		$app = & JFactory::getApplication();
+		$templateName = $app->getTemplate();
+		$idMyGadgetDir = JPATH_THEMES . DS . $templateName . DS . 'jmws_idMyGadget_for_joomla';
+		$fileWeNeedRelative = 'gadget_detectors' . DS . 'detect_mobile_browsers' . DS . 'php' . DS . 'detectmobilebrowser.php';
+		$fileWeNeedRooted = $idMyGadgetDir . DS . $fileWeNeedRelative;
+		print '<p>Hi from isInstalled() where $templateName = ' . $templateName . '</p>';
+		print '<p>Hi from isInstalled() where JPATH_THEMES = ' . JPATH_THEMES . '</p>';
+		print '<p>Hi from isInstalled() where $fileWeNeedRelative = ' . $fileWeNeedRelative . '</p>';
+		print '<p>Hi from isInstalled() where $fileWeNeedRooted = ' . $fileWeNeedRooted . '</p>';
+
+		if ( file_exists($fileWeNeedRooted) )
 		{
 			$detectorInstalled = TRUE;
 		}
