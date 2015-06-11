@@ -33,22 +33,21 @@ class IdMyGadgetDetectMobileBrowsers extends IdMyGadget
 	 */
 	public function isInstalled()
 	{
-		$detectorInstalled = FALSE;
-		$app = & JFactory::getApplication();
-		$templateName = $app->getTemplate();
-		$idMyGadgetDir = JPATH_THEMES . DS . $templateName . DS . 'jmws_idMyGadget_for_joomla';
-		$fileWeNeedRelative = 'gadget_detectors' . DS . 'detect_mobile_browsers' . DS . 'php' . DS . 'detectmobilebrowser.php';
-		$fileWeNeedRooted = $idMyGadgetDir . DS . $fileWeNeedRelative;
-		print '<p>Hi from isInstalled() where $templateName = ' . $templateName . '</p>';
-		print '<p>Hi from isInstalled() where JPATH_THEMES = ' . JPATH_THEMES . '</p>';
-		print '<p>Hi from isInstalled() where $fileWeNeedRelative = ' . $fileWeNeedRelative . '</p>';
-		print '<p>Hi from isInstalled() where $fileWeNeedRooted = ' . $fileWeNeedRooted . '</p>';
-
-		if ( file_exists($fileWeNeedRooted) )
+		if ( $this->detectorIsInstalled === null )
 		{
-			$detectorInstalled = TRUE;
+			$this->detectorIsInstalled = FALSE;
+			$fileWeNeedRelative = 'gadget_detectors' . DS . $this->detectorUsed . DS .
+				'php' . DS . 'detectmobilebrowser.php';
+			$fileWeNeedRooted = $this->idMyGadgetDir . DS . $fileWeNeedRelative;
+			print '<p>isInstalled() in IdMyGadgetDetectMobileBrowsers,: $fileWeNeedRelative = ' . $fileWeNeedRelative . '</p>';
+			print '<p>isInstalled() in IdMyGadgetDetectMobileBrowsers: $fileWeNeedRooted = ' . $fileWeNeedRooted . '</p>';
+			if ( file_exists($fileWeNeedRooted) )
+			{
+				$this->detectorIsInstalled = TRUE;
+			}
 		}
-		return $detectorInstalled;
+
+		return $this->detectorIsInstalled ;
 	}
 	/**
 	 * Get all of the data we can about the device
