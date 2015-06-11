@@ -47,9 +47,7 @@ class Detector
 		$templateName = $application->getTemplate();
 		$idMyGadgetDir = JPATH_THEMES . DS . $templateName . DS . 'jmws_idMyGadget_for_joomla';
 		set_include_path( get_include_path() . PATH_SEPARATOR . $idMyGadgetDir );
-		print '<p>Hi from the constructor in Device, where $templateName = ' . $templateName . '</p>';
-		print '<p>Hi from the constructor in Device, where JPATH_THEMES = ' . JPATH_THEMES . '</p>';
-		print '<p>Hi from the constructor in Device, where $idMyGadgetDir = ' . $idMyGadgetDir . '</p>';
+		print '<p>Hi from the constructor in Detector, where $idMyGadgetDir = ' . $idMyGadgetDir . '</p>';
 
 		if ( $gadgetDetector === self::DETECT_MOBILE_BROWSERS )
 		{
