@@ -20,11 +20,10 @@ class IdMyGadgetDetectMobileBrowsers extends IdMyGadget
 	/**
 	 * Constructor: initialize essential data members
 	 */
-	public function __construct( $debugging=FALSE, $allowOverridesInUrl=FALSE, $usingMobilePhone=null )
+	public function __construct( $debugging=FALSE, $allowOverridesInUrl=FALSE )
 	{
 		parent::__construct( $debugging, $allowOverridesInUrl );
 		$this->detectorUsed = parent::GADGET_DETECTOR_DETECT_MOBILE_BROWSERS;
-		$this->usingMobilePhone = $usingMobilePhone;
 	}
 
 	/**
