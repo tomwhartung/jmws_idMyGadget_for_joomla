@@ -1,7 +1,15 @@
 <?php
 /**
  * Creates an object of the desired idMyGadget subclass and uses it for device detection.
+ * NOTE:
+ * *IF* we can keep all the joomla-specific code here,
+ * *THEN* we can reuse the rest of the code in this project for WP and Drupal (and...?)
  */
+if( !defined('DS') )
+{
+	define('DS', DIRECTORY_SEPARATOR);
+}
+
 class Detector
 {
 	const DETECT_MOBILE_BROWSERS = 'detect_mobile_browsers';
@@ -35,9 +43,13 @@ class Detector
 		}
 
 		$this->gadgetDetector = $gadgetDetector;
-		$cwd = getcwd();
-		$dir_to_add = $cwd . '/templates/jmws_protostar_idmygadget/jmws_idMyGadget_for_joomla';
-		set_include_path( get_include_path() . PATH_SEPARATOR . $dir_to_add );
+		$application = &JFactory::getApplication();
+		$templateName = $application->getTemplate();
+		$idMyGadgetDir = JPATH_THEMES . DS . $templateName . DS . 'jmws_idMyGadget_for_joomla';
+		set_include_path( get_include_path() . PATH_SEPARATOR . $idMyGadgetDir );
+		print '<p>Hi from the constructor in Device, where $templateName = ' . $templateName . '</p>';
+		print '<p>Hi from the constructor in Device, where JPATH_THEMES = ' . JPATH_THEMES . '</p>';
+		print '<p>Hi from the constructor in Device, where $idMyGadgetDir = ' . $idMyGadgetDir . '</p>';
 
 		if ( $gadgetDetector === self::DETECT_MOBILE_BROWSERS )
 		{
@@ -61,11 +73,26 @@ class Detector
 		if ( $this->idMyGadget !== null )
 		{
 			require_once 'gadget_detectors/all_detectors/getGadgetString.php';
+			$this->idMyGadget->idMyGadgetDir = $idMyGadgetDir;
 			$this->deviceData = $this->idMyGadget->getDeviceData();
 			$this->gadgetString = getGadgetString( $this->deviceData );
 		}
 	}
 
+	/**
+	 * Returns TRUE if the desired detector (subclass) is installed, else FALSE
+	 */
+	public function isInstalled()
+	{
+		return $this->idMyGadget->isInstalled();
+	}
+	/**
+	 * Returns a link to the appropriate README.md file on github
+	 */
+	public function getLinkToReadme()
+	{
+		return $this->idMyGadget->getLinkToReadme();
+	}
 	/**
 	 * The idMyGadget object is read-only!
 	 */
