@@ -12,13 +12,10 @@ if( !defined('DS') )
 
 class Detector
 {
-	const DETECT_MOBILE_BROWSERS = 'detect_mobile_browsers';
-	const MOBILE_DETECT = 'mobile_detect';
-	const TERA_WURFL = 'tera_wurfl';
 	/**
 	 * The gadget detector that we are using
 	 */
-	protected $gadgetDetector = self::DETECT_MOBILE_BROWSERS;  // default is to use the small, minimal one
+	protected $gadgetDetector = null;
 	/**
 	 * The idMyGadget object we are using
 	 */
@@ -37,31 +34,32 @@ class Detector
 	 */
 	public function __construct( $gadgetDetector=null, $debugging=FALSE, $allowOverridesInUrl=TRUE )
 	{
-		if ( $gadgetDetector === null )
-		{
-			$gadgetDetector = self::DETECT_MOBILE_BROWSERS;  // default is to use the small, minimal one
-		}
-
-		$this->gadgetDetector = $gadgetDetector;
 		$application = &JFactory::getApplication();
 		$templateName = $application->getTemplate();
 		$idMyGadgetDir = JPATH_THEMES . DS . $templateName . DS . 'jmws_idMyGadget_for_joomla';
 		set_include_path( get_include_path() . PATH_SEPARATOR . $idMyGadgetDir );
-		print '<p>Hi from the constructor in Detector, where $idMyGadgetDir = ' . $idMyGadgetDir . '</p>';
+		require_once 'php/IdMyGadget.php';
 
-		if ( $gadgetDetector === self::DETECT_MOBILE_BROWSERS )
+		if ( $gadgetDetector === null )
+		{
+			$gadgetDetector = IdMyGadget::GADGET_DETECTOR_DETECT_MOBILE_BROWSERS;
+		}
+
+		$this->gadgetDetector = $gadgetDetector;
+
+		if ( $gadgetDetector === IdMyGadget::GADGET_DETECTOR_DETECT_MOBILE_BROWSERS )
 		{
 			require_once 'gadget_detectors/detect_mobile_browsers/php/detectmobilebrowser.php';     // sets $usingMobilePhone global variable
 			require_once 'php/IdMyGadgetDetectMobileBrowsers.php';
 			$this->idMyGadget = new IdMyGadgetDetectMobileBrowsers( $debugging, $allowOverridesInUrl );
 		}
-		else if ( $gadgetDetector === self::MOBILE_DETECT )
+		else if ( $gadgetDetector === IdMyGadget::GADGET_DETECTOR_MOBILE_DETECT )
 		{
 			require_once 'gadget_detectors/mobile_detect/Mobile-Detect/Mobile_Detect.php' ;
 			require_once 'php/IdMyGadgetMobileDetect.php';
 			$this->idMyGadget = new IdMyGadgetMobileDetect( $debugging, $allowOverridesInUrl );
 		}
-		else if ( $gadgetDetector === self::TERA_WURFL )
+		else if ( $gadgetDetector === IdMyGadget::GADGET_DETECTOR_TERA_WURFL )
 		{
 			require_once 'gadget_detectors/tera_wurfl/Tera-Wurfl/wurfl-dbapi/TeraWurfl.php';
 			require_once 'php/IdMyGadgetTeraWurfl.php';
