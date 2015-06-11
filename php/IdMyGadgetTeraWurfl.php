@@ -45,7 +45,6 @@ class IdMyGadgetTeraWurfl extends IdMyGadget
 	{
 		parent::__construct( $debugging, $allowOverridesInUrl );
 		$this->detectorUsed = parent::GADGET_DETECTOR_TERA_WURFL;
-		$this->teraWurflObject = new TeraWurfl();    // Instantiate the TeraWURFL object
 	}
 
 	/**
@@ -60,8 +59,8 @@ class IdMyGadgetTeraWurfl extends IdMyGadget
 			$fileWeNeedRelative = 'gadget_detectors' . DS . $this->detectorUsed . DS .
 				'Tera-Wurfl' . DS . 'wurfl-dbapi' . DS .  'TeraWurflConfig.php';
 			$fileWeNeedRooted = $this->idMyGadgetDir . DS . $fileWeNeedRelative;
-		//	print '<p>isInstalled() in IdMyMobileDetect,: $fileWeNeedRelative = ' . $fileWeNeedRelative . '</p>';
-		//	print '<p>isInstalled() in IdMyMobileDetect: $fileWeNeedRooted = ' . $fileWeNeedRooted . '</p>';
+		//	print '<p>isInstalled() in IdMyGadgetTeraWurfl,: $fileWeNeedRelative = ' . $fileWeNeedRelative . '</p>';
+		//	print '<p>isInstalled() in IdMyGadgetTeraWurfl: $fileWeNeedRooted = ' . $fileWeNeedRooted . '</p>';
 			if ( file_exists($fileWeNeedRooted) )
 			{
 				$this->detectorIsInstalled = TRUE;
@@ -76,6 +75,13 @@ class IdMyGadgetTeraWurfl extends IdMyGadget
 	 */
 	public function getDeviceData()
 	{
+		if ( $this->teraWurflObject === null )
+		{
+			if ( $this->isInstalled() )
+			{
+				$this->teraWurflObject = new TeraWurfl();    // Instantiate the TeraWURFL object
+			}
+		}
 		if ( ! $this->deviceDataAreSet )
 		{
 			$this->keyCapabilities = $this->getKeyCapabilities();
