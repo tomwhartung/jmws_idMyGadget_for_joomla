@@ -49,6 +49,7 @@ class Detector
 
 		if ( $gadgetDetector === IdMyGadget::GADGET_DETECTOR_DETECT_MOBILE_BROWSERS )
 		{
+			global $usingMobilePhone;
 			require_once 'gadget_detectors/detect_mobile_browsers/php/detectmobilebrowser.php';     // sets $usingMobilePhone global variable
 			require_once 'php/IdMyGadgetDetectMobileBrowsers.php';
 			$this->idMyGadget = new IdMyGadgetDetectMobileBrowsers( $debugging, $allowOverridesInUrl );
