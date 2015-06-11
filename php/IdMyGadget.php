@@ -56,6 +56,16 @@ abstract class IdMyGadget
 	 * @var boolean
 	 */
 	public $allowOverridesInUrl = TRUE;
+	/**
+	 * Directory in which this project is installed (rooted directory to "..")
+	 * @var type String
+	 */
+	public $idMyGadgetDir = null;
+	/**
+	 * TRUE if desired device detector is installed else FALSE
+	 * @var boolean
+	 */
+	protected $detectorIsInstalled = null;
 
 	//
 	// Device Data Fields are: gadgetType, gadgetModel, and gadgetBrand
