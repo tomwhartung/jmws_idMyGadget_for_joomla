@@ -39,8 +39,8 @@ class IdMyGadgetDetectMobileBrowsers extends IdMyGadget
 			$fileWeNeedRelative = 'gadget_detectors' . DS . $this->detectorUsed . DS .
 				'php' . DS . 'detectmobilebrowser.php';
 			$fileWeNeedRooted = $this->idMyGadgetDir . DS . $fileWeNeedRelative;
-			print '<p>isInstalled() in IdMyGadgetDetectMobileBrowsers,: $fileWeNeedRelative = ' . $fileWeNeedRelative . '</p>';
-			print '<p>isInstalled() in IdMyGadgetDetectMobileBrowsers: $fileWeNeedRooted = ' . $fileWeNeedRooted . '</p>';
+		//	print '<p>isInstalled() in IdMyGadgetDetectMobileBrowsers,: $fileWeNeedRelative = ' . $fileWeNeedRelative . '</p>';
+		//	print '<p>isInstalled() in IdMyGadgetDetectMobileBrowsers: $fileWeNeedRooted = ' . $fileWeNeedRooted . '</p>';
 			if ( file_exists($fileWeNeedRooted) )
 			{
 				$this->detectorIsInstalled = TRUE;
