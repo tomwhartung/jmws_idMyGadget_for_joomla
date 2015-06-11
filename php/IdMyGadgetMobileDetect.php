@@ -24,7 +24,7 @@ class IdMyGadgetMobileDetect extends IdMyGadget
 	public function __construct( $debugging=FALSE, $allowOverridesInUrl=FALSE )
 	{
 		parent::__construct( $debugging, $allowOverridesInUrl );
-		$this->detectorUsed = parent::GADGET_DETECTOR_MOBILE_DETECTOR;
+		$this->detectorUsed = parent::GADGET_DETECTOR_MOBILE_DETECT;
 		$this->mobileDetectObject = new Mobile_Detect();
 	}
 
@@ -34,12 +34,21 @@ class IdMyGadgetMobileDetect extends IdMyGadget
 	 */
 	public function isInstalled()
 	{
-		$detectorInstalled = FALSE;
-		if ( file_exists('php/detectmobilebrowser.php') )
+		if ( $this->detectorIsInstalled === null )
 		{
-			$detectorInstalled = TRUE;
+			$this->detectorIsInstalled = FALSE;
+			$fileWeNeedRelative = 'gadget_detectors' . DS . $this->detectorUsed . DS .
+				'Mobile-Detect' . DS . 'Mobile_Detect.php';
+			$fileWeNeedRooted = $this->idMyGadgetDir . DS . $fileWeNeedRelative;
+			print '<p>isInstalled() in IdMyMobileDetect,: $fileWeNeedRelative = ' . $fileWeNeedRelative . '</p>';
+			print '<p>isInstalled() in IdMyMobileDetect: $fileWeNeedRooted = ' . $fileWeNeedRooted . '</p>';
+			if ( file_exists($fileWeNeedRooted) )
+			{
+				$this->detectorIsInstalled = TRUE;
+			}
 		}
-		return $detectorInstalled;
+
+		return $this->detectorIsInstalled ;
 	}
 
 	/**
