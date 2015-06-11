@@ -60,8 +60,8 @@ class IdMyGadgetTeraWurfl extends IdMyGadget
 			$fileWeNeedRelative = 'gadget_detectors' . DS . $this->detectorUsed . DS .
 				'Tera-Wurfl' . DS . 'wurfl-dbapi' . DS .  'TeraWurflConfig.php';
 			$fileWeNeedRooted = $this->idMyGadgetDir . DS . $fileWeNeedRelative;
-			print '<p>isInstalled() in IdMyMobileDetect,: $fileWeNeedRelative = ' . $fileWeNeedRelative . '</p>';
-			print '<p>isInstalled() in IdMyMobileDetect: $fileWeNeedRooted = ' . $fileWeNeedRooted . '</p>';
+		//	print '<p>isInstalled() in IdMyMobileDetect,: $fileWeNeedRelative = ' . $fileWeNeedRelative . '</p>';
+		//	print '<p>isInstalled() in IdMyMobileDetect: $fileWeNeedRooted = ' . $fileWeNeedRooted . '</p>';
 			if ( file_exists($fileWeNeedRooted) )
 			{
 				$this->detectorIsInstalled = TRUE;

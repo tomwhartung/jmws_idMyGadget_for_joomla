@@ -40,8 +40,8 @@ class IdMyGadgetMobileDetect extends IdMyGadget
 			$fileWeNeedRelative = 'gadget_detectors' . DS . $this->detectorUsed . DS .
 				'Mobile-Detect' . DS . 'Mobile_Detect.php';
 			$fileWeNeedRooted = $this->idMyGadgetDir . DS . $fileWeNeedRelative;
-			print '<p>isInstalled() in IdMyMobileDetect,: $fileWeNeedRelative = ' . $fileWeNeedRelative . '</p>';
-			print '<p>isInstalled() in IdMyMobileDetect: $fileWeNeedRooted = ' . $fileWeNeedRooted . '</p>';
+		//	print '<p>isInstalled() in IdMyMobileDetect,: $fileWeNeedRelative = ' . $fileWeNeedRelative . '</p>';
+		//	print '<p>isInstalled() in IdMyMobileDetect: $fileWeNeedRooted = ' . $fileWeNeedRooted . '</p>';
 			if ( file_exists($fileWeNeedRooted) )
 			{
 				$this->detectorIsInstalled = TRUE;
