@@ -25,7 +25,6 @@ class IdMyGadgetMobileDetect extends IdMyGadget
 	{
 		parent::__construct( $debugging, $allowOverridesInUrl );
 		$this->detectorUsed = parent::GADGET_DETECTOR_MOBILE_DETECT;
-		$this->mobileDetectObject = new Mobile_Detect();
 	}
 
 	/**
@@ -57,6 +56,13 @@ class IdMyGadgetMobileDetect extends IdMyGadget
 	 */
 	public function getDeviceData()
 	{
+		if ( $this->mobileDetectObject === null )
+		{
+			if ( $this->isInstalled() )
+			{
+				$this->mobileDetectObject = new Mobile_Detect();
+			}
+		}
 		if ( $this->deviceDataAreSet !== TRUE )
 		{
 			$this->setGadgetType();
