@@ -54,12 +54,21 @@ class IdMyGadgetTeraWurfl extends IdMyGadget
 	 */
 	public function isInstalled()
 	{
-		$detectorInstalled = FALSE;
-		if ( file_exists('php/detectmobilebrowser.php') )
+		if ( $this->detectorIsInstalled === null )
 		{
-			$detectorInstalled = TRUE;
+			$this->detectorIsInstalled = FALSE;
+			$fileWeNeedRelative = 'gadget_detectors' . DS . $this->detectorUsed . DS .
+				'Tera-Wurfl' . DS . 'wurfl-dbapi' . DS .  'TeraWurflConfig.php';
+			$fileWeNeedRooted = $this->idMyGadgetDir . DS . $fileWeNeedRelative;
+			print '<p>isInstalled() in IdMyMobileDetect,: $fileWeNeedRelative = ' . $fileWeNeedRelative . '</p>';
+			print '<p>isInstalled() in IdMyMobileDetect: $fileWeNeedRooted = ' . $fileWeNeedRooted . '</p>';
+			if ( file_exists($fileWeNeedRooted) )
+			{
+				$this->detectorIsInstalled = TRUE;
+			}
 		}
-		return $detectorInstalled;
+
+		return $this->detectorIsInstalled ;
 	}
 	/**
 	 * Get data about the device
