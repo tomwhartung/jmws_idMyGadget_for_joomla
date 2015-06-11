@@ -10,7 +10,7 @@ if( !defined('DS') )
 	define('DS', DIRECTORY_SEPARATOR);
 }
 
-class Detector
+class JmwsIdMyGadget
 {
 	/**
 	 * The gadget detector that we are using
