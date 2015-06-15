@@ -124,18 +124,7 @@ class JmwsIdMyGadget
 		return $this->deviceData;
 	}
 	/**
-	 * The gadget type (and all other device data) is read-only!
-	 * If you want to treat Apple and Android phones identically, use the gadget type
-	 * Otherwise use the gadget string
-	 */
-	public function getGadgetType()
-	{
-		return $this->deviceData['gadgetType'];
-	}
-	/**
 	 * The gadget string is read-only!
-	 * If you want to identify Apple and Android phones, use the gadget string
-	 * Otherwise use the gadget type
 	 */
 	public function getGadgetString()
 	{
