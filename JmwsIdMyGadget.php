@@ -12,6 +12,13 @@ if( !defined('DS') )
 
 class JmwsIdMyGadget
 {
+	const GADGET_STRING_UNKNOWN_DEVICE = 'Unknown Device';
+	const GADGET_STRING_DESKTOP = 'Desktop';
+	const GADGET_STRING_TABLET = 'Tablet';
+	const GADGET_STRING_I_PHONE = 'iPhone';
+	const GADGET_STRING_ANDROID_PHONE = 'Android Phone';
+	const GADGET_STRING_MOBILE_PHONE = 'Mobile Phone';
+
 	/**
 	 * The gadget detector that we are using
 	 */
@@ -27,7 +34,7 @@ class JmwsIdMyGadget
 	/**
 	 * A string that represents the gadget being used
 	 */
-	protected $gadgetString = "";
+	protected $gadgetString = null;
 
 	/**
 	 * Constructor: for best results, specify a different gadgetDetector
@@ -134,32 +141,32 @@ class JmwsIdMyGadget
 	 */
 	protected function setGadgetString()
 	{
-		$gadgetString = "Unknown Device";
+		$gadgetString = self::GADGET_STRING_UNKNOWN_DEVICE;
 		$gadgetType = $this->deviceData["gadgetType"];
 		$gadgetModel = $this->deviceData["gadgetModel"];
 		$gadgetBrand = $this->deviceData["gadgetBrand"];
 
 		if ( $gadgetType === IdMyGadget::GADGET_TYPE_DESKTOP )
 		{
-			$gadgetString = "Desktop";
+			$gadgetString = self::GADGET_STRING_DESKTOP;
 		}
 		else if ( $gadgetType === IdMyGadget::GADGET_TYPE_TABLET )
 		{
-			$gadgetString = "Tablet";
+			$gadgetString = self::GADGET_STRING_TABLET;
 		}
 		else if ( $gadgetType === IdMyGadget::GADGET_TYPE_PHONE )
 		{
 			if ( $gadgetModel === IdMyGadget::GADGET_MODEL_APPLE_PHONE )
 			{
-				$gadgetString = "iPhone";
+				$gadgetString = self::GADGET_STRING_I_PHONE;
 			}
 			else if ( $gadgetModel === IdMyGadget::GADGET_MODEL_ANDROID_PHONE )
 			{
-				$gadgetString = "Android Phone";
+				$gadgetString = self::GADGET_STRING_ANDROID_PHONE;
 			}
 			else
 			{
-				$gadgetString = "Mobile Phone";
+				$gadgetString = self::GADGET_STRING_MOBILE_PHONE;
 			}
 		}
 		return $gadgetString;
