@@ -12,11 +12,21 @@ if( !defined('DS') )
 
 class JmwsIdMyGadget
 {
+	/**
+	 * Valid values for the gadget string.  Use invalid values at your own risk!
+	 */
 	const GADGET_STRING_DETECTOR_NOT_INSTALLED = 'Detector Not Installed';
 	const GADGET_STRING_UNKNOWN_DEVICE = 'Unknown Device';
 	const GADGET_STRING_DESKTOP = 'Desktop';
 	const GADGET_STRING_TABLET = 'Tablet';
 	const GADGET_STRING_PHONE = 'Phone';
+
+	/**
+	 * URLs of the device-specific jquery files we are using
+	 */
+	const JQUERY_DESKTOP_JS_URL = 'http://code.jquery.com/jquery-1.11.3.min.js';
+	const JQUERY_MOBILE_CSS_URL = 'http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css';
+	const JQUERY_MOBILE_JS_URL = 'http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js';
 
 	/**
 	 * The gadget detector that we are using
