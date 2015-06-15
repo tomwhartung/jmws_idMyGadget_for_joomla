@@ -74,7 +74,7 @@ class JmwsIdMyGadget
 			if ( $this->idMyGadget->isInstalled() )
 			{
 				$this->deviceData = $this->idMyGadget->getDeviceData();
-				$this->gadgetString = getGadgetString( $this->deviceData );
+				$this->gadgetString = $this->setGadgetString();
 			}
 		}
 	}
@@ -119,7 +119,7 @@ class JmwsIdMyGadget
 	 */
 	public function getGadgetString()
 	{
-		return $this->gadgetString;
+		return $this->gadgetString;   // set in constructor
 	}
 	/**
 	 * Display the device data
@@ -129,5 +129,40 @@ class JmwsIdMyGadget
 	{
 		return $this->idMyGadget->displayDeviceData();
 	}
+	/**
+	 * Return a short string describing the device, based on the device data passed in
+	 * @return string gadgetString
+	 */
+	protected function setGadgetString()
+	{
+		$gadgetString = "Unknown Device";
+		$gadgetType = $this->deviceData["gadgetType"];
+		$gadgetModel = $this->deviceData["gadgetModel"];
+		$gadgetBrand = $this->deviceData["gadgetBrand"];
 
+		if ( $gadgetType === IdMyGadget::GADGET_TYPE_DESKTOP )
+		{
+			$gadgetString = "Desktop";
+		}
+		else if ( $gadgetType === IdMyGadget::GADGET_TYPE_TABLET )
+		{
+			$gadgetString = "Tablet";
+		}
+		else if ( $gadgetType === IdMyGadget::GADGET_TYPE_PHONE )
+		{
+			if ( $gadgetModel === IdMyGadget::GADGET_MODEL_APPLE_PHONE )
+			{
+				$gadgetString = "iPhone";
+			}
+			else if ( $gadgetModel === IdMyGadget::GADGET_MODEL_ANDROID_PHONE )
+			{
+				$gadgetString = "Android Phone";
+			}
+			else
+			{
+				$gadgetString = "Mobile Phone";
+			}
+		}
+		return $gadgetString;
+	}
 }
