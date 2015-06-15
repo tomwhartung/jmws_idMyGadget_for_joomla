@@ -12,6 +12,7 @@ if( !defined('DS') )
 
 class JmwsIdMyGadget
 {
+	const GADGET_STRING_DETECTOR_NOT_INSTALLED = 'Detector Not Installed';
 	const GADGET_STRING_UNKNOWN_DEVICE = 'Unknown Device';
 	const GADGET_STRING_DESKTOP = 'Desktop';
 	const GADGET_STRING_TABLET = 'Tablet';
@@ -81,6 +82,10 @@ class JmwsIdMyGadget
 			{
 				$this->deviceData = $this->idMyGadget->getDeviceData();
 				$this->gadgetString = $this->setGadgetString();
+			}
+			else
+			{
+				$this->gadgetString = self::GADGET_STRING_DETECTOR_NOT_INSTALLED;
 			}
 		}
 	}
