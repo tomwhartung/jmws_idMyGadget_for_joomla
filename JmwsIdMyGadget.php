@@ -121,5 +121,13 @@ class JmwsIdMyGadget
 	{
 		return $this->gadgetString;
 	}
+	/**
+	 * Display the device data
+	 * @return string of <li> tags listing the device data
+	 */
+	public function displayDeviceData()
+	{
+		return $this->idMyGadget->displayDeviceData();
+	}
 
-		}
+}
