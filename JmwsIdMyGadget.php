@@ -69,7 +69,6 @@ class JmwsIdMyGadget
 
 		if ( $this->idMyGadget !== null )
 		{
-			require_once 'gadget_detectors/all_detectors/getGadgetString.php';
 			$this->idMyGadget->idMyGadgetDir = $idMyGadgetDir;
 			if ( $this->idMyGadget->isInstalled() )
 			{
