@@ -26,7 +26,11 @@ class JmwsIdMyGadget
 	const JQUERY_MOBILE_JS_URL = 'http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js';
 
 	/**
-	 * The gadget detector that we are using
+	 * The directory containing the gadget detector we are using
+	 */
+	protected $idMyGadgetDir = '';
+	/**
+	 * The gadget detector we are using
 	 */
 	protected $gadgetDetector = null;
 	/**
@@ -40,14 +44,14 @@ class JmwsIdMyGadget
 	/**
 	 * A string that represents the gadget being used
 	 */
-	protected $gadgetString = null;
+	protected $gadgetString = '';
 
 	/**
 	 * Constructor: for best results, specify a different gadgetDetector
 	 */
 	public function __construct( $gadgetDetector=null, $debugging=FALSE, $allowOverridesInUrl=TRUE )
 	{
-		print 'Yo I am in the parent constructor!  YO!!';
+		print '<p>Hello there!  Hoping sooooo much that WE CAN SEE THIS?!?!?</p>';
 		require_once 'php/IdMyGadget.php';
 
 		if ( $gadgetDetector === null )
@@ -79,7 +83,7 @@ class JmwsIdMyGadget
 
 		if ( $this->idMyGadget !== null )
 		{
-			$this->idMyGadget->idMyGadgetDir = $idMyGadgetDir;
+			$this->idMyGadget->idMyGadgetDir = $this->idMyGadgetDir;
 			if ( $this->idMyGadget->isInstalled() )
 			{
 				$this->deviceData = $this->idMyGadget->getDeviceData();
