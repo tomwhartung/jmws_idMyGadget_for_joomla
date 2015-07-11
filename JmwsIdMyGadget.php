@@ -1,9 +1,6 @@
 <?php
 /**
  * Creates an object of the desired idMyGadget subclass and uses it for device detection.
- * NOTE:
- * *IF* we can keep all the joomla-specific code here,
- * *THEN* we can reuse the rest of the code in this project for WP and Drupal (and...?)
  */
 if( !defined('DS') )
 {
@@ -50,10 +47,7 @@ class JmwsIdMyGadget
 	 */
 	public function __construct( $gadgetDetector=null, $debugging=FALSE, $allowOverridesInUrl=TRUE )
 	{
-		$application = JFactory::getApplication();
-		$templateName = $application->getTemplate();
-		$idMyGadgetDir = JPATH_THEMES . DS . $templateName . DS . 'jmws_idMyGadget_for_joomla';
-		set_include_path( get_include_path() . PATH_SEPARATOR . $idMyGadgetDir );
+		print 'Yo I am in the parent constructor!  YO!!';
 		require_once 'php/IdMyGadget.php';
 
 		if ( $gadgetDetector === null )
@@ -113,7 +107,7 @@ class JmwsIdMyGadget
 		return $this->idMyGadget->getLinkToReadme();
 	}
 	/**
-	 * The idMyGadget object is read-only!
+	 * The gadgetDetector object is read-only!
 	 */
 	public function getGadgetDetector()
 	{
