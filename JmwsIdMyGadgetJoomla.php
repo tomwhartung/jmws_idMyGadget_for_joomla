@@ -26,13 +26,11 @@ class JmwsIdMyGadgetJoomla extends JmwsIdMyGadget
 	 */
 	public function __construct( $gadgetDetector=null, $debugging=FALSE, $allowOverridesInUrl=TRUE )
 	{
-		print 'Hi there cutie!  WHY AM I NOT SEEING THIS WTF?!?!?';
 		$application = JFactory::getApplication();
 		$templateName = $application->getTemplate();
 		$this->idMyGadgetDir = JPATH_THEMES . DS . $templateName . DS . 'jmws_idMyGadget_for_joomla';
 		set_include_path( get_include_path() . PATH_SEPARATOR . $this->idMyGadgetDir );
 
-		print '<p>Hi there!  MAYBE WE CAN SEE THIS?!?!?</p>';
 		parent::__construct( $gadgetDetector, $debugging, $allowOverridesInUrl );
 	}
 }

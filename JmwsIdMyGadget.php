@@ -51,7 +51,6 @@ class JmwsIdMyGadget
 	 */
 	public function __construct( $gadgetDetector=null, $debugging=FALSE, $allowOverridesInUrl=TRUE )
 	{
-		print '<p>Hello there!  Hoping sooooo much that WE CAN SEE THIS?!?!?</p>';
 		require_once 'php/IdMyGadget.php';
 
 		if ( $gadgetDetector === null )
