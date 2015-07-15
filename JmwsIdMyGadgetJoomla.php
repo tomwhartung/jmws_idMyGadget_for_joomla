@@ -10,6 +10,11 @@ require_once 'JmwsIdMyGadget.php';
 class JmwsIdMyGadgetJoomla extends JmwsIdMyGadget
 {
 	/**
+	 * Boolean: Using jQuery Mobile changes everything, so we need to know when we are using it.
+	 * Although we always use it on phones, we do not always use it on tablets.
+	 */
+	public $usingJQueryMobile = FALSE;
+	/**
 	 * Boolean: determines whether we want the hamburger menu in the upper left corner
 	 * of this page for this device.
 	 * Set by the template, based on options set in the back end.
