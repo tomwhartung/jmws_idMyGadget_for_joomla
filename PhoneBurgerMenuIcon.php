@@ -1,29 +1,31 @@
 <?php
 /**
- * Bundles the data that we use to create the phone burger menu icons
+ * Bundles and sets the data that we use to create the phone burger menu icons
  */
 
 class PhoneBurgerMenuIcon
 {
-	public html = '';
-	public js = '';
-	public fileName = '';      // used for hack needed for phones
-	public useImage = FALSE;
+	public $html = '';
+	public $js = '';
+	public $fileName = '';      // used for hack needed for phones
+	public $useImage = FALSE;
+
+	protected $leftOrRight = "";
+	protected $params = null;
+	protected $jmwsIdMyGadget = null;
 
 	/**
 	 * Constructor: use the parameters set in the joomla back end to set the data members
 	 */
-	public function __construct( $leftOrRight, $params, $$jmwsIdMyGadget )
+	public function __construct( $leftOrRight, $params, $jmwsIdMyGadget )
 	{
-		$application = JFactory::getApplication();
-		$templateName = $application->getTemplate();
-		$this->idMyGadgetDir = JPATH_THEMES . DS . $templateName . DS . 'jmws_idMyGadget_for_joomla';
-		set_include_path( get_include_path() . PATH_SEPARATOR . $this->idMyGadgetDir );
-
-		parent::__construct( $gadgetDetector, $debugging, $allowOverridesInUrl );
+		$this->leftOrRight = $leftOrRight ;
+		$this->params = $params;
+		$this->jmwsIdMyGadget = $jmwsIdMyGadget ;
+		setPublicDataMembers();
 	}
 
-	protected function copiedCodeGiveMeAName()
+	protected function setPublicDataMembers()
 	{
 		if ( $jmwsIdMyGadget->phoneBurgerIconThisDeviceLeft )
 		{
@@ -62,5 +64,4 @@ class PhoneBurgerMenuIcon
 				'</script>';
 		}
 	}
-}
 }
