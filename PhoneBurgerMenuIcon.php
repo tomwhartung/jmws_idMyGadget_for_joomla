@@ -68,5 +68,35 @@ class PhoneBurgerMenuIcon
 					'phoneBurgerIconLeftOptions.lineSize = "' . $this->params->get('phoneBurgerMenuLeftLineSize') . '";' .
 				'</script>';
 		}
+		if ( $this->leftOrRight === self::RIGHT &&
+		     $this->jmwsIdMyGadget->phoneBurgerIconThisDeviceRight )
+		{
+			$this->html =
+				'<a href="#phone-burger-menu-right" class="pull-right" data-rel="dialog">';
+			if ( $this->useImage )
+			{
+				$this->html .=
+					'<img id="phone-burger-icon-image-right"' .
+						'width="' . $this->params->get('phoneBurgerMenuRightSize') . '" ' .
+						'height="' . $this->params->get('phoneBurgerMenuRightSize') . '" ' .
+						' src="templates/' . $this->fileName . '" />';
+			}
+			else
+			{
+				$this->html .=
+					'<canvas id="phone-burger-icon-right" ' .
+						'width="' . $this->params->get('phoneBurgerMenuRightSize') . '" ' .
+						'height="' . $this->params->get('phoneBurgerMenuRightSize') . '">' .
+						'&nbsp;Menu&nbsp;' . '</canvas>';
+			}
+			$this->html .= '</a>';
+			$this->js =
+				'<script>' .
+					'var phoneBurgerIconRightOptions = {};' .
+					'phoneBurgerIconRightOptions.color = "' . $this->params->get('phoneBurgerMenuRightColor') . '";' .
+					'phoneBurgerIconRightOptions.lineCap = "' . $this->params->get('phoneBurgerMenuRightLineCap') . '";' .
+					'phoneBurgerIconRightOptions.lineSize = "' . $this->params->get('phoneBurgerMenuRightLineSize') . '";' .
+				'</script>';
+		}
 	}
 }
