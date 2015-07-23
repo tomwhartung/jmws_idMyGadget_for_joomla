@@ -33,8 +33,9 @@ class PhoneBurgerMenuIcon
 	protected function setPublicDataMembers()
 	{
 		$this->fileName = $this->template . '/images/idMyGadget/phoneBurgerMenuIcon' .
-			ucfirst($this->leftOrRight) . $this->jmwsIdMyGadget->getGadgetString() .
-			DS . '.png';
+			ucfirst($this->leftOrRight) .
+			ucfirst($this->jmwsIdMyGadget->getGadgetString()) .
+			'.png';
 		if ( file_exists(JPATH_THEMES . DS . $this->fileName) )
 		{
 			$this->useImage = TRUE;
