@@ -5,57 +5,62 @@
 
 class PhoneBurgerMenuIcon
 {
+	const LEFT = 'left';
+	const RIGHT = 'right';
+
 	public $html = '';
 	public $js = '';
 	public $fileName = '';      // used for hack needed for phones
 	public $useImage = FALSE;
 
-	protected $leftOrRight = "";
+	protected $leftOrRight = '';
+	protected $template = '';
 	protected $params = null;
 	protected $jmwsIdMyGadget = null;
 
 	/**
 	 * Constructor: use the parameters set in the joomla back end to set the data members
 	 */
-	public function __construct( $leftOrRight, $params, $jmwsIdMyGadget )
+	public function __construct( $leftOrRight, $template, $params, $jmwsIdMyGadget )
 	{
 		$this->leftOrRight = $leftOrRight ;
+		$this->template = $template;
 		$this->params = $params;
 		$this->jmwsIdMyGadget = $jmwsIdMyGadget ;
-		setPublicDataMembers();
+		$this->setPublicDataMembers();
 	}
 
 	protected function setPublicDataMembers()
 	{
-		if ( $jmwsIdMyGadget->phoneBurgerIconThisDeviceLeft )
+		$this->fileName = $this->template . '/images/idMyGadget/phoneBurgerMenuIcon' .
+			ucfirst($this->leftOrRight) . $this->jmwsIdMyGadget->getGadgetString() .
+			DS . '.png';
+		if ( file_exists(JPATH_THEMES . DS . $this->fileName) )
 		{
-			if ( $jmwsIdMyGadget->getGadgetString() === $jmwsIdMyGadget::GADGET_STRING_PHONE )
+			$this->useImage = TRUE;
+		}
+		if ( $this->leftOrRight === self::LEFT &&
+		     $this->jmwsIdMyGadget->phoneBurgerIconThisDeviceLeft )
+		{
+			$this->html = '<a href="#phone-burger-menu-left" data-rel="dialog">';
+			if ( $this->useImage )
 			{
-				$phoneBurgerIconLeft->fileName = $this->template . '/images/idMyGadget/phoneBurgerMenuIconLeft.png';
-				if ( file_exists(JPATH_THEMES . DS . $phoneBurgerIconLeft->fileName) )
-				{
-					$phoneBurgerIconLeft->useImage = TRUE;
-				}
-			}
-			$phoneBurgerIconLeft->html = '<a href="#phone-burger-menu-left" data-rel="dialog">';
-			if ( $phoneBurgerIconLeft->useImage )
-			{
-				$phoneBurgerIconLeft->html .=
+				$this->html .=
 					'<img id="phone-burger-icon-image-left" ' .
 						'width="' . $this->params->get('phoneBurgerMenuLeftSize') . '" ' .
 						'height="' . $this->params->get('phoneBurgerMenuLeftSize') . '" ' .
-						'src="templates/' . $phoneBurgerIconLeft->fileName . '" />';
+						'src="templates/' . $this->fileName . '" />';
 			}
 			else
 			{
-				$phoneBurgerIconLeft->html .=
+				$this->html .=
 					'<canvas id="phone-burger-icon-left" ' .
 						'width="' . $this->params->get('phoneBurgerMenuLeftSize') . '" ' .
 						'height="' . $this->params->get('phoneBurgerMenuLeftSize') . '">' .
 						'&nbsp;Menu&nbsp;' . '</canvas>';
 			}
-			$phoneBurgerIconLeft->html .= '</a>';
-			$phoneBurgerIconLeft->js =
+			$this->html .= '</a>';
+			$this->js =
 				'<script>' .
 					'var phoneBurgerIconLeftOptions = {};' .
 					'phoneBurgerIconLeftOptions.color = "' . $this->params->get('phoneBurgerMenuLeftColor') . '";' .
