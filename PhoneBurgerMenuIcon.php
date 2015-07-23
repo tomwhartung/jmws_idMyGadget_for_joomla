@@ -1,6 +1,9 @@
 <?php
 /**
  * Bundles and sets the data that we use to create the phone burger menu icons
+ * Note: Everything that uses the phone burger icon file name is part of a hack we need
+ *   because using the JS API to draw the phone burger menu is currently not working on phones
+ *   except when we reload the page. It would be nice to be able to remove that someday....
  */
 
 class PhoneBurgerMenuIcon
@@ -10,7 +13,7 @@ class PhoneBurgerMenuIcon
 
 	public $html = '';
 	public $js = '';
-	public $fileName = '';      // used for hack needed for phones
+	public $fileName = '';      // used for hack needed for phones and beez3
 	public $useImage = FALSE;
 
 	protected $leftOrRight = '';
