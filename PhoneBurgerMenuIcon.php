@@ -70,12 +70,12 @@ class PhoneBurgerMenuIcon
 	/**
 	 * Constructor: use the parameters set in the joomla back end to set the data members
 	 */
-	public function __construct( $leftOrRight, $template, $params, $jmwsIdMyGadget )
+	public function __construct( $leftOrRight, $params, $jmwsIdMyGadget, $template )
 	{
 		$this->leftOrRight = $leftOrRight ;
-		$this->template = $template;
 		$this->params = $params;
 		$this->jmwsIdMyGadget = $jmwsIdMyGadget ;
+		$this->template = $template;
 		$this->setPublicDataMembers();
 	}
 
