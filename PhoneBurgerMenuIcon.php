@@ -11,15 +11,61 @@ class PhoneBurgerMenuIcon
 	const LEFT = 'left';
 	const RIGHT = 'right';
 
+	/**
+	 * The html markup we want to use for this.
+	 * Note that if this particular icon is not being displayed, this remains empty.
+	 * @var type String
+	 */
 	public $html = '';
+	/**
+	 * The javascript we want to use for this.
+	 * Note that if this particular icon is not being displayed, this remains empty.
+	 * @var type String
+	 */
 	public $js = '';
+	/**
+	 * Using a canvas element and drawing the phoneburger icon
+	 * does not work on all devices (e.g. phones) and
+	 * with all templates (e.g., beez3), without reloading the page.
+	 * Hence this hack, to allow using an image in a file.
+	 * To display a file instead of drawing the icon,
+	 * (1) put it in images/idMyGadget/ and
+	 * (2) name it phoneBurgerMenuIcon[Left|Right][Device].png .
+	 *     where [Device] is "Desktop" "Phone" or "Tablet"
+	 * Examples:
+	 *    images/idMyGadget/phoneBurgerMenuIconLeftDesktop.png
+	 *    images/idMyGadget/phoneBurgerMenuIconRightPhone.png
+	 *    images/idMyGadget/phoneBurgerMenuIconRightTablet.png
+	 * @var type
+	 */
 	public $fileName = '';      // used for hack needed for phones and beez3
+	/**
+	 * If the file is there, we use it, else we generate the html and js needed to draw the icon.
+	 * @var type Boolean
+	 */
 	public $useImage = FALSE;
 
+	/**
+	 * Either self::LEFT or self::RIGHT
+	 * @var type String
+	 */
 	protected $leftOrRight = '';
-	protected $template = '';
+	/**
+	 * Parameters set in the joomla adminstrator area
+	 * @var type Object
+	 */
 	protected $params = null;
+	/**
+	 * The object we are using for device detection
+	 * @var type Object
+	 */
 	protected $jmwsIdMyGadget = null;
+	/**
+	 * Just the template name (not an object, just a string)
+	 * Needed to find the image files used for the hack (see above)
+	 * @var type String
+	 */
+	protected $template = '';
 
 	/**
 	 * Constructor: use the parameters set in the joomla back end to set the data members
