@@ -8,7 +8,10 @@ tmp/
 #
 # Ignore third-party code
 #
-/gadget_detectors/detect_mobile_browsers/php/detectmobilebrowser.php.txt
-/gadget_detectors/mobile_detect/Mobile-Detect/
-/gadget_detectors/tera_wurfl/Tera-Wurfl/wurfl-dbapi*
+## /gadget_detectors/detect_mobile_browsers/php/detectmobilebrowser.php.txt
+## /gadget_detectors/mobile_detect/Mobile-Detect/
+## /gadget_detectors/tera_wurfl/Tera-Wurfl/wurfl-dbapi*
+/libraries/vendor/jmws_idMyGadget_for_joomla/gadget_detectors/detect_mobile_browsers/php/detectmobilebrowser.php.txt
+/libraries/vendor/jmws_idMyGadget_for_joomla/gadget_detectors/mobile_detect/Mobile-Detect/
+/libraries/vendor/jmws_idMyGadget_for_joomla/gadget_detectors/tera_wurfl/Tera-Wurfl/wurfl-dbapi*
 
