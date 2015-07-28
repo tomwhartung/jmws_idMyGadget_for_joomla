@@ -33,7 +33,7 @@ class JmwsIdMyGadgetJoomla extends JmwsIdMyGadget
 	{
 		$application = JFactory::getApplication();
 		$templateName = $application->getTemplate();
-		$this->idMyGadgetDir = JPATH_THEMES . DS . $templateName . DS . 'jmws_idMyGadget_for_joomla';
+		$this->idMyGadgetDir = JPATH_LIBRARIES . DS . 'vendor' . DS . 'jmws_idMyGadget_for_joomla';
 		set_include_path( get_include_path() . PATH_SEPARATOR . $this->idMyGadgetDir );
 
 		parent::__construct( $gadgetDetector, $debugging, $allowOverridesInUrl );
