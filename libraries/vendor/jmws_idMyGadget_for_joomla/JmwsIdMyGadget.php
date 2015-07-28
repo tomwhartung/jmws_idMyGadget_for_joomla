@@ -26,9 +26,10 @@ class JmwsIdMyGadget
 	const JQUERY_MOBILE_JS_URL = 'http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js';
 
 	/**
-	 * The directory containing the gadget detector we are using
+	 * The directory containing the idMyGadget code
+	 * Used to determine whether the selected gadget detector code is installed.
 	 */
-	protected $idMyGadgetDir = '';
+	protected $idMyGadgetDir = ''; // set by subclass in its constructor
 	/**
 	 * The gadget detector we are using
 	 */
