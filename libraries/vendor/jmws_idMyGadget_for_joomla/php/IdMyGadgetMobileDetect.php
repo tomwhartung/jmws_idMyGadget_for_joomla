@@ -36,12 +36,13 @@ class IdMyGadgetMobileDetect extends IdMyGadget
 		if ( $this->detectorIsInstalled === null )
 		{
 			$this->detectorIsInstalled = FALSE;
-			$fileWeNeedRelative = 'gadget_detectors' . DIRECTORY_SEPARATOR . $this->detectorUsed . DIRECTORY_SEPARATOR .
+			$fileWeNeedPartialPath = 'gadget_detectors' . DIRECTORY_SEPARATOR .
+				$this->detectorUsed . DIRECTORY_SEPARATOR .
 				'Mobile-Detect' . DIRECTORY_SEPARATOR . 'Mobile_Detect.php';
-			$fileWeNeedRooted = $this->idMyGadgetDir . DIRECTORY_SEPARATOR . $fileWeNeedRelative;
-		//	print '<p>isInstalled() in IdMyMobileDetect,: $fileWeNeedRelative = ' . $fileWeNeedRelative . '</p>';
-		//	print '<p>isInstalled() in IdMyMobileDetect: $fileWeNeedRooted = ' . $fileWeNeedRooted . '</p>';
-			if ( file_exists($fileWeNeedRooted) )
+			$fileWeNeedFullPath = $this->idMyGadgetDir . DIRECTORY_SEPARATOR . $fileWeNeedPartialPath;
+		//	print '<p>isInstalled() in IdMyMobileDetect,: $fileWeNeedPartialPath = ' . $fileWeNeedPartialPath . '</p>';
+		//	print '<p>isInstalled() in IdMyMobileDetect: $fileWeNeedFullPath = ' . $fileWeNeedFullPath . '</p>';
+			if ( file_exists($fileWeNeedFullPath) )
 			{
 				$this->detectorIsInstalled = TRUE;
 			}

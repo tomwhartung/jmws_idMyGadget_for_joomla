@@ -35,12 +35,13 @@ class IdMyGadgetDetectMobileBrowsers extends IdMyGadget
 		if ( $this->detectorIsInstalled === null )
 		{
 			$this->detectorIsInstalled = FALSE;
-			$fileWeNeedRelative = 'gadget_detectors' . DIRECTORY_SEPARATOR . $this->detectorUsed . DIRECTORY_SEPARATOR .
+			$fileWeNeedPartialPath = 'gadget_detectors' . DIRECTORY_SEPARATOR .
+				$this->detectorUsed . DIRECTORY_SEPARATOR .
 				'php' . DIRECTORY_SEPARATOR . 'detectmobilebrowser.php';
-			$fileWeNeedRooted = $this->idMyGadgetDir . DIRECTORY_SEPARATOR . $fileWeNeedRelative;
-		//	print '<p>isInstalled() in IdMyGadgetDetectMobileBrowsers,: $fileWeNeedRelative = ' . $fileWeNeedRelative . '</p>';
-		//	print '<p>isInstalled() in IdMyGadgetDetectMobileBrowsers: $fileWeNeedRooted = ' . $fileWeNeedRooted . '</p>';
-			if ( file_exists($fileWeNeedRooted) )
+			$fileWeNeedFullPath = $this->idMyGadgetDir . DIRECTORY_SEPARATOR . $fileWeNeedPartialPath;
+		//	print '<p>isInstalled() in IdMyGadgetDetectMobileBrowsers,: $fileWeNeedPartialPath = ' . $fileWeNeedPartialPath . '</p>';
+		//	print '<p>isInstalled() in IdMyGadgetDetectMobileBrowsers: $fileWeNeedFullPath = ' . $fileWeNeedFullPath . '</p>';
+			if ( file_exists($fileWeNeedFullPath) )
 			{
 				$this->detectorIsInstalled = TRUE;
 			}
