@@ -11,7 +11,7 @@ $pageTitle = basename( $_SERVER['PHP_SELF'], '.php' );
 
 require_once 'Tera-Wurfl/wurfl-dbapi/TeraWurfl.php';
 require_once '../../php/IdMyGadgetTeraWurfl.php';
-require_once '../all_detectors/getGadgetString.php';
+require_once '../all_detectors/getIdMyGadgetStringAllDevices.php';
 require_once '../all_detectors/printStyleSheetLinkTags.php';
 require_once 'DemoTeraWurfl.php';
 
@@ -24,9 +24,9 @@ require_once 'DemoTeraWurfl.php';
 $debugging = FALSE;
 $allowOverridesInUrl = TRUE;   // Needed for footer forms to work
 $idMyGadget = new IdMyGadgetTeraWurfl( $debugging, $allowOverridesInUrl );
-
+$idMyGadget->idMyGadgetDir = '../..';
 $deviceData = $idMyGadget->getDeviceData();
-$gadgetString = getGadgetString( $deviceData );
+$gadgetString = getIdMyGadgetStringAllDevices( $deviceData );
 ?>
 
 <head>
