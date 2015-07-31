@@ -6,17 +6,18 @@ if( !defined('DS') )
 {
 	define('DS', DIRECTORY_SEPARATOR);
 }
+require_once 'php/IdMyGadget.php';
 
 class JmwsIdMyGadget
 {
 	/**
 	 * Valid values for the gadget string.  Use invalid values at your own risk!
 	 */
-	const GADGET_STRING_DETECTOR_NOT_INSTALLED = 'Detector Not Installed';
-	const GADGET_STRING_UNKNOWN_DEVICE = 'Unknown Device';
-	const GADGET_STRING_DESKTOP = 'Desktop';
-	const GADGET_STRING_TABLET = 'Tablet';
-	const GADGET_STRING_PHONE = 'Phone';
+	const GADGET_STRING_DETECTOR_NOT_INSTALLED = IdMyGadget::GADGET_STRING_DETECTOR_NOT_INSTALLED;
+	const GADGET_STRING_UNKNOWN_DEVICE = IdMyGadget::GADGET_STRING_UNKNOWN_DEVICE;
+	const GADGET_STRING_DESKTOP = IdMyGadget::GADGET_STRING_DESKTOP;
+	const GADGET_STRING_TABLET = IdMyGadget::GADGET_STRING_TABLET;
+	const GADGET_STRING_PHONE = IdMyGadget::GADGET_STRING_PHONE;
 
 	/**
 	 * URLs of the device-specific jquery files we are using
@@ -52,7 +53,7 @@ class JmwsIdMyGadget
 	 */
 	public function __construct( $gadgetDetector=null, $debugging=FALSE, $allowOverridesInUrl=TRUE )
 	{
-		require_once 'php/IdMyGadget.php';
+		require_once 'gadget_detectors/all_detectors/getIdMyGadgetStringAllDevices.php';
 
 		if ( $gadgetDetector === null )
 		{
@@ -87,7 +88,7 @@ class JmwsIdMyGadget
 			if ( $this->idMyGadget->isInstalled() )
 			{
 				$this->deviceData = $this->idMyGadget->getDeviceData();
-				$this->gadgetString = $this->setGadgetString();
+				$this->gadgetString = getIdMyGadgetStringAllDevices( $this->deviceData );
 			}
 			else
 			{
@@ -169,6 +170,7 @@ class JmwsIdMyGadget
 		{
 			$gadgetString = self::GADGET_STRING_PHONE;
 		}
+
 		return $gadgetString;
 	}
 }
