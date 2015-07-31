@@ -4,6 +4,15 @@
  */
 abstract class IdMyGadget
 {
+	/**
+	 * Valid values for the gadget string.  Use invalid values at your own risk!
+	 */
+	const GADGET_STRING_DETECTOR_NOT_INSTALLED = 'Detector Not Installed';
+	const GADGET_STRING_UNKNOWN_DEVICE = 'Unknown Device';
+	const GADGET_STRING_DESKTOP = 'Desktop';
+	const GADGET_STRING_TABLET = 'Tablet';
+	const GADGET_STRING_PHONE = 'Phone';
+
 	const GADGET_DETECTOR_UNKNOWN = 'unknown';
 	const GADGET_DETECTOR_DETECT_MOBILE_BROWSERS = 'detect_mobile_browsers';
 	const GADGET_DETECTOR_MOBILE_DETECT = 'mobile_detect';
