@@ -33,7 +33,7 @@ $wurflObj->getDeviceCapabilitiesFromAgent();
 	</p>
 	<h3>Using the Results</h3>
 
-	<?php if ( $deviceType == 'phone' ): ?>
+	<?php if ( $wurflObj->getDeviceCapability("is_wireless_device") ): ?>
 		<p>This is content for phones only.</p>
 		<p>You might want this content to link to
 			<a href="https://en.wikipedia.org/wiki/Mobile_security">a page about mobile security</a>,
