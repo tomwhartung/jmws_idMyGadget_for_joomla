@@ -7,14 +7,14 @@ $pageTitle = basename( $_SERVER['PHP_SELF'], '.php' );
 //
 require_once 'php/detectmobilebrowser.php';     // sets $usingMobilePhone global variable
 require_once '../../php/IdMyGadgetDetectMobileBrowsers.php';
-require_once '../all_detectors/getGadgetString.php';
+require_once '../all_detectors/getIdMyGadgetStringAllDevices.php';
 require_once '../all_detectors/printStyleSheetLinkTags.php';
 
 $debugging = FALSE;
 $allowOverridesInUrl = TRUE;   // Needed for footer forms to work
 $idMyGadget = new IdMyGadgetDetectMobileBrowsers( $debugging, $allowOverridesInUrl );
 $deviceData = $idMyGadget->getDeviceData();
-$gadgetString = getGadgetString( $deviceData );
+$gadgetString = getIdMyGadgetStringAllDevices( $deviceData );
 ?>
 
 <head>

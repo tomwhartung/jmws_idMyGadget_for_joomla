@@ -4,7 +4,7 @@
   *
   * @param type $deviceData
   */
-require_once 'getGadgetString.php';
+require_once 'getIdMyGadgetStringAllDevices.php';
 
 define( "STYLE_SHEET_DESKTOP",       "../../css/device/desktop.css" );
 define( "STYLE_SHEET_TABLET",        "../../css/device/tablet.css" );
@@ -21,7 +21,7 @@ function getStyleSheetFile( $deviceData )
 
 	if ( ! isset($gadgetString) )
 	{
-		$gadgetString = getGadgetString( $deviceData );
+		$gadgetString = getIdMyGadgetStringAllDevices( $deviceData );
 	}
 
 	if ( $gadgetString === "Desktop" )
