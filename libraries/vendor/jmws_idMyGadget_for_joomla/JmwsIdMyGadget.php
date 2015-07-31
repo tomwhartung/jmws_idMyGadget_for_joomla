@@ -147,30 +147,4 @@ class JmwsIdMyGadget
 	{
 		return $this->idMyGadget->displayDeviceData();
 	}
-	/**
-	 * Return a short string describing the device, based on the device data passed in
-	 * @return string gadgetString
-	 */
-	protected function setGadgetString()
-	{
-		$gadgetString = self::GADGET_STRING_UNKNOWN_DEVICE;
-		$gadgetType = $this->deviceData["gadgetType"];
-		$gadgetModel = $this->deviceData["gadgetModel"];
-		$gadgetBrand = $this->deviceData["gadgetBrand"];
-
-		if ( $gadgetType === IdMyGadget::GADGET_TYPE_DESKTOP )
-		{
-			$gadgetString = self::GADGET_STRING_DESKTOP;
-		}
-		else if ( $gadgetType === IdMyGadget::GADGET_TYPE_TABLET )
-		{
-			$gadgetString = self::GADGET_STRING_TABLET;
-		}
-		else if ( $gadgetType === IdMyGadget::GADGET_TYPE_PHONE )
-		{
-			$gadgetString = self::GADGET_STRING_PHONE;
-		}
-
-		return $gadgetString;
-	}
 }
