@@ -29,13 +29,13 @@ class JmwsIdMyGadgetJoomla extends JmwsIdMyGadget
 	/**
 	 * Constructor: for best results, install and use a gadgetDetector other than the default
 	 */
-	public function __construct( $gadgetDetector=null, $debugging=FALSE, $allowOverridesInUrl=TRUE )
+	public function __construct( $gadgetDetectorString=null, $debugging=FALSE, $allowOverridesInUrl=TRUE )
 	{
 		$application = JFactory::getApplication();
 	//	$templateName = $application->getTemplate();
 		$this->idMyGadgetDir = JPATH_LIBRARIES . DS . 'vendor' . DS . 'jmws_idMyGadget_for_joomla';
 		set_include_path( get_include_path() . PATH_SEPARATOR . $this->idMyGadgetDir );
 
-		parent::__construct( $gadgetDetector, $debugging, $allowOverridesInUrl );
+		parent::__construct( $gadgetDetectorString, $debugging, $allowOverridesInUrl );
 	}
 }

@@ -34,7 +34,7 @@ class JmwsIdMyGadget
 	/**
 	 * The gadget detector we are using
 	 */
-	protected $gadgetDetector = null;
+	protected $gadgetDetectorString = null;
 	/**
 	 * The idMyGadget object we are using
 	 */
@@ -51,31 +51,31 @@ class JmwsIdMyGadget
 	/**
 	 * Constructor: for best results, specify a different gadgetDetector
 	 */
-	public function __construct( $gadgetDetector=null, $debugging=FALSE, $allowOverridesInUrl=TRUE )
+	public function __construct( $gadgetDetectorString=null, $debugging=FALSE, $allowOverridesInUrl=TRUE )
 	{
 		require_once 'gadget_detectors/all_detectors/getIdMyGadgetStringAllDevices.php';
 
-		if ( $gadgetDetector === null )
+		if ( $gadgetDetectorString === null )
 		{
-			$gadgetDetector = IdMyGadget::GADGET_DETECTOR_DETECT_MOBILE_BROWSERS;
+			$gadgetDetectorString = IdMyGadget::GADGET_DETECTOR_DETECT_MOBILE_BROWSERS;
 		}
 
-		$this->gadgetDetector = $gadgetDetector;
+		$this->gadgetDetectorString = $gadgetDetectorString;
 
-		if ( $gadgetDetector === IdMyGadget::GADGET_DETECTOR_DETECT_MOBILE_BROWSERS )
+		if ( $gadgetDetectorString === IdMyGadget::GADGET_DETECTOR_DETECT_MOBILE_BROWSERS )
 		{
 			global $usingMobilePhone;
 			include_once 'gadget_detectors/detect_mobile_browsers/php/detectmobilebrowser.php';     // sets $usingMobilePhone global variable
 			include_once 'php/IdMyGadgetDetectMobileBrowsers.php';
 			$this->idMyGadget = new IdMyGadgetDetectMobileBrowsers( $debugging, $allowOverridesInUrl );
 		}
-		else if ( $gadgetDetector === IdMyGadget::GADGET_DETECTOR_MOBILE_DETECT )
+		else if ( $gadgetDetectorString === IdMyGadget::GADGET_DETECTOR_MOBILE_DETECT )
 		{
 			include_once 'gadget_detectors/mobile_detect/Mobile-Detect/Mobile_Detect.php' ;
 			include_once 'php/IdMyGadgetMobileDetect.php';
 			$this->idMyGadget = new IdMyGadgetMobileDetect( $debugging, $allowOverridesInUrl );
 		}
-		else if ( $gadgetDetector === IdMyGadget::GADGET_DETECTOR_TERA_WURFL )
+		else if ( $gadgetDetectorString === IdMyGadget::GADGET_DETECTOR_TERA_WURFL )
 		{
 			include_once 'gadget_detectors/tera_wurfl/Tera-Wurfl/wurfl-dbapi/TeraWurfl.php';
 			include_once 'php/IdMyGadgetTeraWurfl.php';
@@ -116,7 +116,7 @@ class JmwsIdMyGadget
 	 */
 	public function getGadgetDetectorString()
 	{
-		return $this->gadgetDetector;
+		return $this->gadgetDetectorString;
 	}
 	/**
 	 * The idMyGadget object is read-only!
