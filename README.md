@@ -68,4 +68,5 @@ It is essential to realize that this repo only provides a bridge between:
 * one of the device detectors listed above and
 * one of the joomla templates listed above
 
-Additionally, you will need to refer to the original idMyGadget repo, because much of the information there is not duplicated here.
+Additionally, you will need to refer to the original idMyGadget repo, because much of the information there is not duplicated here.  For information about the IdMyGadget Device Detection Adapter API&copy;, see the [About-IdMyGadget.md file in this directory](https://github.com/tomwhartung/jmws_idMyGadget_for_joomla/blob/master/ABOUT-IdMyGadget.md).
+
