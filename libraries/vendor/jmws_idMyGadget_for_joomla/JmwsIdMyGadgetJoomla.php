@@ -15,10 +15,15 @@ class JmwsIdMyGadgetJoomla extends JmwsIdMyGadget
 	 */
 	public $usingJQueryMobile = FALSE;
 	/**
-	 * Boolean: whether the admins want the jQuery Mobile phone header and footer nav on this device
+	 * Boolean: whether the admins want the jQuery Mobile phone header nav on this device
 	 * Added pretty much only for demo purposes, so people see why we don't use it.
 	 */
-	public $phoneNavThisDevice = FALSE;
+	public $phoneHeaderNavThisDevice = FALSE;
+	/**
+	 * Boolean: whether the admins want the jQuery Mobile phone footer nav on this device
+	 * Added pretty much only for demo purposes, so people see why we don't use it.
+	 */
+	public $phoneFooterNavThisDevice = FALSE;
 	/**
 	 * Boolean: determines whether we want the hamburger menu in the upper left corner
 	 * of this page for this device.
