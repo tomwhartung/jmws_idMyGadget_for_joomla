@@ -2,6 +2,8 @@
 # jmws_idMyGadget_for_joomla
 This is the version of the IdMyGadget&copy; adapter API that I customizing for integration with the default joomla templates Beez3 and protostar.
 
+Small change for Cliff!
+
 ## Overview
 
 This code is middle ware, sitting between (and, when properly set up, actually containing) three device detectors and the three joomla templates that use it.
